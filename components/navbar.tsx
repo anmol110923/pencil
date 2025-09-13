@@ -1,8 +1,9 @@
 "use client"
 
+import Image from "next/image"
 import Link from "next/link"
 import { useState } from "react"
-import { Menu, X, GraduationCap } from "lucide-react"
+import { Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { ThemeToggle } from "@/components/theme-toggle"
 import { useAppStore } from "@/lib/store"
@@ -23,31 +24,26 @@ export function Navbar() {
   }
 
   return (
-    import Image from "next/image";
-    import Link from "next/link";
-  <nav className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/80 backdrop-blur-md supports-[backdrop-filter]:bg-background/60 shadow-sm">
-  <div className="container mx-auto max-w-7xl px-4">
-    <div className="flex h-20 items-center justify-between">
-      {/* Logo */}
-      <Link href="/" className="flex items-center space-x-3 group">
-        <div className="p-2 bg-gradient-to-br from-[#64ffda]/20 to-[#64ffda]/10 rounded-xl group-hover:from-[#64ffda]/30 group-hover:to-[#64ffda]/20 transition-all duration-200">
-          <Image
-            src="/public/COLLEGEINDINO.png" // your logo file in public folder
-            alt="Collegindino Logo"
-            width={32}   // adjust size as needed
-            height={32}
-            className="object-contain"
-          />
-        </div>
-        <span className="text-2xl font-bold bg-gradient-to-r from-foreground to-foreground/80 bg-clip-text">
-          Collegindino
-        </span>
-      </Link>
+    <nav className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/80 backdrop-blur-md supports-[backdrop-filter]:bg-background/60 shadow-sm">
+      <div className="container mx-auto max-w-7xl px-4">
+        <div className="flex h-20 items-center justify-between">
+          {/* Logo */}
+          <Link href="/" className="flex items-center space-x-3 group">
+            <div className="p-2 bg-gradient-to-br from-[#64ffda]/20 to-[#64ffda]/10 rounded-xl group-hover:from-[#64ffda]/30 group-hover:to-[#64ffda]/20 transition-all duration-200">
+              <Image
+                src="/public/COLLEGEINDINO.png" // your logo file in public folder
+                alt="Collegindino Logo"
+                width={32}
+                height={32}
+                className="object-contain"
+              />
+            </div>
+            <span className="text-2xl font-bold bg-gradient-to-r from-foreground to-foreground/80 bg-clip-text">
+              Collegindino
+            </span>
+          </Link>
 
-
-
-    
-          {/* Desktop Navigation - Enhanced spacing and hover effects */}
+          {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             <Link
               href="/"
@@ -74,7 +70,7 @@ export function Navbar() {
             )}
           </div>
 
-          {/* Desktop Auth & Theme - Enhanced button styling */}
+          {/* Desktop Auth & Theme */}
           <div className="hidden md:flex items-center space-x-4">
             {isLoggedIn ? (
               <Button
@@ -100,7 +96,12 @@ export function Navbar() {
           {/* Mobile menu button */}
           <div className="md:hidden flex items-center space-x-2">
             <ThemeToggle />
-            <Button variant="ghost" size="icon" onClick={() => setIsOpen(!isOpen)} className="h-9 w-9">
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={() => setIsOpen(!isOpen)}
+              className="h-9 w-9"
+            >
               {isOpen ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
             </Button>
           </div>
@@ -133,14 +134,23 @@ export function Navbar() {
                   Dashboard
                 </Link>
               )}
-              
+
               <div className="pt-2">
                 {isLoggedIn ? (
-                  <Button onClick={handleLogout} variant="outline" size="sm" className="w-full bg-transparent">
+                  <Button
+                    onClick={handleLogout}
+                    variant="outline"
+                    size="sm"
+                    className="w-full bg-transparent"
+                  >
                     Logout
                   </Button>
                 ) : (
-                  <Button onClick={handleLogin} size="sm" className="w-full bg-[#64ffda] text-black hover:bg-[#4fd1c7]">
+                  <Button
+                    onClick={handleLogin}
+                    size="sm"
+                    className="w-full bg-[#64ffda] text-black hover:bg-[#4fd1c7]"
+                  >
                     Login
                   </Button>
                 )}
