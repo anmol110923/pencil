@@ -15,8 +15,7 @@ export function Footer() {
               <span className="text-2xl font-bold">Collegindino</span>
             </div>
             <p className="text-muted-foreground leading-relaxed mb-4 max-w-md">
-              Empowering learners worldwide with premium courses and expert instruction. Join thousands of students who
-              have transformed their careers with us.
+              Everything in one place for 1st-year B.Tech students.
             </p>
           </div>
 

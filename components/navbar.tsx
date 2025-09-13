@@ -3,7 +3,8 @@
 import Image from "next/image"
 import Link from "next/link"
 import { useState } from "react"
-import { Menu, X } from "lucide-react"
+import { Menu, X, GraduationCap } from "lucide-react"
+
 import { Button } from "@/components/ui/button"
 import { ThemeToggle } from "@/components/theme-toggle"
 import { useAppStore } from "@/lib/store"
@@ -23,25 +24,18 @@ export function Navbar() {
     setAdmin(false)
   }
 
-  return (
-    <nav className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/80 backdrop-blur-md supports-[backdrop-filter]:bg-background/60 shadow-sm">
-      <div className="container mx-auto max-w-7xl px-4">
-        <div className="flex h-20 items-center justify-between">
-          {/* Logo */}
-          <Link href="/" className="flex items-center space-x-3 group">
-            <div className="p-2 bg-gradient-to-br from-[#64ffda]/20 to-[#64ffda]/10 rounded-xl group-hover:from-[#64ffda]/30 group-hover:to-[#64ffda]/20 transition-all duration-200">
-              <Image
-                src="/public/COLLEGEINDINO.png" // your logo file in public folder
-                alt="Collegindino Logo"
-                width={32}
-                height={32}
-                className="object-contain"
-              />
-            </div>
-            <span className="text-2xl font-bold bg-gradient-to-r from-foreground to-foreground/80 bg-clip-text">
-              Collegindino
-            </span>
-          </Link>
+  return (<nav className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/80 backdrop-blur-md supports-[backdrop-filter]:bg-background/60 shadow-sm">
+  <div className="container mx-auto max-w-7xl px-4">
+  <div className="flex h-20 items-center justify-between">
+    {/* Logo */}
+    <Link href="/" className="flex items-center space-x-3 group">
+      <div className="p-2 bg-gradient-to-br from-[#64ffda]/20 to-[#64ffda]/10 rounded-xl group-hover:from-[#64ffda]/30 group-hover:to-[#64ffda]/20 transition-all duration-200">
+        <GraduationCap className="h-8 w-8 text-[#64ffda]" />
+      </div>
+      <span className="text-2xl font-bold bg-gradient-to-r from-foreground to-foreground/80 bg-clip-text">
+        Collegindino
+      </span>
+    </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
@@ -82,16 +76,17 @@ export function Navbar() {
                 Logout
               </Button>
             ) : (
-              <Button
-                onClick={handleLogin}
+              <Link href="/login">
+                <Button
                 size="sm"
-                className="bg-[#64ffda] text-black hover:bg-[#4fd1c7] rounded-xl shadow-lg hover:shadow-xl hover:shadow-[#64ffda]/20 transition-all duration-200"
-              >
-                Login
-              </Button>
-            )}
+                className="bg-[#64ffda] text-black hover:bg-[#4fd1c7] rounded-xl shadow-lg hover:shadow-xl hover:shadow-[#64ffda]/20 transition-all duration-200">
+                  Login
+                </Button>
+              </Link>
+              )}
             <ThemeToggle />
           </div>
+              
 
           {/* Mobile menu button */}
           <div className="md:hidden flex items-center space-x-2">

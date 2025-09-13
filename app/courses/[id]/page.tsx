@@ -109,12 +109,13 @@ export default function CoursePage({ params }: CoursePageProps) {
                 <div className="relative aspect-video bg-gradient-to-br from-slate-900 to-slate-800 rounded-lg overflow-hidden">
                   {isPurchased ? (
                     <div className="relative w-full h-full">
+                      {/* ✅ Updated to support YouTube video embedding */}
                       <iframe
                         src={course.videoUrl}
                         title={course.title}
                         className="w-full h-full rounded-lg"
-                        allowFullScreen
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen
                       />
                       <div className="absolute top-4 right-4 bg-[#64ffda] text-black px-3 py-1 rounded-full text-sm font-medium">
                         HD Quality
@@ -214,7 +215,7 @@ export default function CoursePage({ params }: CoursePageProps) {
                       >
                         <Link href="#" target="_blank">
                           <Download className="h-4 w-4 mr-2" />
-                          Source Code & Assets
+                          Bonus materials
                         </Link>
                       </Button>
                     </div>
@@ -246,7 +247,7 @@ export default function CoursePage({ params }: CoursePageProps) {
                       </span>
                       <span className="flex items-center gap-1">
                         <div className="w-1.5 h-1.5 bg-[#64ffda] rounded-full" />
-                        Source Code
+                        Cheatsheet
                       </span>
                       <span className="flex items-center gap-1">
                         <div className="w-1.5 h-1.5 bg-[#64ffda] rounded-full" />
