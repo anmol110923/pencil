@@ -100,10 +100,7 @@ export default function CoursePage({ params }: CoursePageProps) {
                 )}
               </div>
 
-              <p className="text-xl text-muted-foreground leading-relaxed text-pretty">
-  Master your 1st-year B.Tech course with concise one-shot videos. Access curated notes, practical files, and previous year questions (PYQs) to revise efficiently and excel in exams.
-</p>
-
+              <p className="text-xl text-muted-foreground leading-relaxed text-pretty">{course.description}</p>
             </div>
 
             {/* Video Section */}
@@ -168,7 +165,6 @@ export default function CoursePage({ params }: CoursePageProps) {
                     This course is designed specifically for 1st-year B.Tech students.
                     You’ll learn fundamental concepts through clear, one-shot video lessons
                     and complementary study materials, enabling fast understanding and exam readiness.
-
                   </p>
                   <h4 className="text-lg font-semibold mt-6 mb-3">What You'll Learn:</h4>
                   <ul className="space-y-2">
@@ -197,7 +193,7 @@ export default function CoursePage({ params }: CoursePageProps) {
                 {isPurchased ? (
                   <div className="space-y-6">
                     <p className="text-muted-foreground leading-relaxed">
-                      Access comprehensive study materials, detailed notes, source code, and bonus resources to enhance
+                      Access comprehensive study materials, detailed notes, and bonus resources to enhance
                       your learning experience.
                     </p>
                     <div className="grid sm:grid-cols-2 gap-4">
@@ -217,7 +213,7 @@ export default function CoursePage({ params }: CoursePageProps) {
                       >
                         <Link href="#" target="_blank">
                           <Download className="h-4 w-4 mr-2" />
-                          Source Code & Assets
+                          Bonus
                         </Link>
                       </Button>
                     </div>
