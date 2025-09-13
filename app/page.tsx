@@ -10,16 +10,27 @@ export default function HomePage() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
+import Link from "next/link"
+import { Button } from "@/components/ui/button"
+import { ArrowRight } from "lucide-react"
 
-      <section className="relative text-center py-24 px-6 overflow-hidden">
+<section className="relative text-center py-24 px-6 overflow-hidden">
   {/* Background Video */}
   <video
-    autoPlaymutedloopplaysInlineclassName="absolute inset-0 w-full h-full object-cover">
-    <source src="/videos/pin3.mp4" type="video/mp4"/>
+    autoPlay
+    muted
+    loop
+    playsInline
+    className="absolute inset-0 w-full h-full object-cover"
+  >
+    <source src="/videos/pin3.mp4" type="video/mp4" />
     Your browser does not support the video tag.
   </video>
 
-  {/* Overlay */}
+  {/* Optional overlay for better contrast */}
+  <div className="absolute inset-0 bg-black/40"></div>
+
+  {/* Content */}
   <div className="relative z-10 max-w-3xl mx-auto">
     {/* Heading */}
     <h1 className="text-5xl md:text-5xl font-extrabold text-white animate-fade-up">
@@ -32,30 +43,28 @@ export default function HomePage() {
     </p>
 
     {/* Buttons */}
-    <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button
-                asChild
-                size="lg"
-                className="bg-[#64ffda] text-black hover:bg-[#4fd1c7] text-lg px-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-200"
-              >
-                <Link href="/courses">
-                  Browse Courses
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Link>
-              </Button>
-              <Button
-                asChild
-                variant="outline"
-                size="lg"
-                className="text-lg px-8 bg-transparent rounded-xl border-2 hover:border-[#64ffda] hover:text-[#64ffda] transition-all duration-200"
-              >
-                <Link href="/login">Get Started</Link>
-              </Button>
-            </div>
-  </div>
+    <div className="flex flex-col sm:flex-row gap-4 justify-center mt-6">
+      <Button
+        asChild
+        size="lg"
+        className="bg-[#64ffda] text-black hover:bg-[#4fd1c7] text-lg px-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-200"
+      >
+        <Link href="/courses">
+          Browse Courses
+          <ArrowRight className="ml-2 h-5 w-5" />
+        </Link>
+      </Button>
 
-  {/* Optional overlay for better contrast */}
-  <div className="absolute inset-0 bg-black/40"></div>
+      <Button
+        asChild
+        variant="outline"
+        size="lg"
+        className="text-lg px-8 bg-transparent rounded-xl border-2 hover:border-[#64ffda] hover:text-[#64ffda] transition-all duration-200"
+      >
+        <Link href="/login">Get Started</Link>
+      </Button>
+    </div>
+  </div>
 </section>
 
       
