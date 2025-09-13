@@ -23,19 +23,30 @@ export function Navbar() {
   }
 
   return (
-    <nav className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/80 backdrop-blur-md supports-[backdrop-filter]:bg-background/60 shadow-sm">
-      <div className="container mx-auto max-w-7xl px-4">
-        <div className="flex h-20 items-center justify-between">
-          {/* Logo - Enhanced with gradient effect */}
-          <Link href="/" className="flex items-center space-x-3 group">
-            <div className="p-2 bg-gradient-to-br from-[#64ffda]/20 to-[#64ffda]/10 rounded-xl group-hover:from-[#64ffda]/30 group-hover:to-[#64ffda]/20 transition-all duration-200">
-              <GraduationCap className="h-8 w-8 text-[#64ffda]" />
-            </div>
-            <span className="text-2xl font-bold bg-gradient-to-r from-foreground to-foreground/80 bg-clip-text">
-              Collegindino
-            </span>
-          </Link>
+    import Image from "next/image";
+    import Link from "next/link";
+  <nav className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/80 backdrop-blur-md supports-[backdrop-filter]:bg-background/60 shadow-sm">
+  <div className="container mx-auto max-w-7xl px-4">
+    <div className="flex h-20 items-center justify-between">
+      {/* Logo */}
+      <Link href="/" className="flex items-center space-x-3 group">
+        <div className="p-2 bg-gradient-to-br from-[#64ffda]/20 to-[#64ffda]/10 rounded-xl group-hover:from-[#64ffda]/30 group-hover:to-[#64ffda]/20 transition-all duration-200">
+          <Image
+            src="/public/COLLEGEINDINO.png" // your logo file in public folder
+            alt="Collegindino Logo"
+            width={32}   // adjust size as needed
+            height={32}
+            className="object-contain"
+          />
+        </div>
+        <span className="text-2xl font-bold bg-gradient-to-r from-foreground to-foreground/80 bg-clip-text">
+          Collegindino
+        </span>
+      </Link>
 
+
+
+    
           {/* Desktop Navigation - Enhanced spacing and hover effects */}
           <div className="hidden md:flex items-center space-x-8">
             <Link
@@ -58,15 +69,6 @@ export function Navbar() {
                 className="text-sm font-medium hover:text-[#64ffda] transition-all duration-200 relative group"
               >
                 Dashboard
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#64ffda] transition-all duration-200 group-hover:w-full" />
-              </Link>
-            )}
-            {isAdmin && (
-              <Link
-                href="/admin"
-                className="text-sm font-medium hover:text-[#64ffda] transition-all duration-200 relative group"
-              >
-                Admin
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#64ffda] transition-all duration-200 group-hover:w-full" />
               </Link>
             )}
@@ -131,15 +133,7 @@ export function Navbar() {
                   Dashboard
                 </Link>
               )}
-              {isAdmin && (
-                <Link
-                  href="/admin"
-                  className="text-sm font-medium hover:text-[#64ffda] transition-colors"
-                  onClick={() => setIsOpen(false)}
-                >
-                  Admin
-                </Link>
-              )}
+              
               <div className="pt-2">
                 {isLoggedIn ? (
                   <Button onClick={handleLogout} variant="outline" size="sm" className="w-full bg-transparent">
