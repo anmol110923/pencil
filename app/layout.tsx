@@ -21,8 +21,9 @@ export default function RootLayout({
 }>) {
   return (
     // app/layout.tsx or pages/_document.tsx
-    <html lang="en">
+    <html lang="en" 
        className="dark">
+      
       <body className={`font-sans ${GeistSans.variable} ${GeistMono.variable} antialiased`}>
         <div className="min-h-screen flex flex-col">
           <Suspense fallback={<div>Loading...</div>}>
