@@ -18,22 +18,6 @@ export function Footer() {
               Empowering learners worldwide with premium courses and expert instruction. Join thousands of students who
               have transformed their careers with us.
             </p>
-            <div className="flex items-center space-x-4">
-              <Link
-                href="#"
-                className="text-muted-foreground hover:text-[#64ffda] transition-all duration-200 p-2 hover:bg-[#64ffda]/10 rounded-lg"
-              >
-                <Linkedin className="h-5 w-5" />
-                <span className="sr-only">LinkedIn</span>
-              </Link>
-              <Link
-                href="#"
-                className="text-muted-foreground hover:text-[#64ffda] transition-all duration-200 p-2 hover:bg-[#64ffda]/10 rounded-lg"
-              >
-                <Github className="h-5 w-5" />
-                <span className="sr-only">GitHub</span>
-              </Link>
-            </div>
           </div>
 
           {/* Quick Links */}
@@ -55,12 +39,7 @@ export function Footer() {
               >
                 Dashboard
               </Link>
-              <Link
-                href="/admin"
-                className="block text-muted-foreground hover:text-[#64ffda] transition-colors text-sm"
-              >
-                Admin
-              </Link>
+              
             </div>
           </div>
 
@@ -70,15 +49,15 @@ export function Footer() {
             <div className="space-y-3">
               <div className="flex items-center gap-2 text-sm text-muted-foreground">
                 <Mail className="h-4 w-4 text-[#64ffda]" />
-                <span>hello@collegindino.com</span>
+                <span>collegindino@gmail.com</span>
               </div>
               <div className="flex items-center gap-2 text-sm text-muted-foreground">
                 <Phone className="h-4 w-4 text-[#64ffda]" />
-                <span>+91 98765 43210</span>
+                <span>+91 72097 68795</span>
               </div>
               <div className="flex items-center gap-2 text-sm text-muted-foreground">
                 <MapPin className="h-4 w-4 text-[#64ffda]" />
-                <span>Mumbai, India</span>
+                <span>Delhi, India</span>
               </div>
             </div>
           </div>
