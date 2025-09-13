@@ -33,7 +33,7 @@ export function Navbar() {
         <GraduationCap className="h-8 w-8 text-[#64ffda]" />
       </div>
       <span className="text-2xl font-bold bg-gradient-to-r from-foreground to-foreground/80 bg-clip-text">
-        Collegindino
+        Collegeindino
       </span>
     </Link>
 
