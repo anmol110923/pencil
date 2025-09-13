@@ -14,20 +14,15 @@ export default function HomePage() {
       <section className="relative text-center py-24 px-6 overflow-hidden">
   {/* Background Video */}
   <video
-    autoPlay
-    muted
-    loop
-    playsInline
-    className="absolute inset-0 w-full h-full object-cover"
-  >
-    <source src="/videos/pin3.mp4" type="video/mp4" />
+    autoPlaymutedloopplaysInlineclassName="absolute inset-0 w-full h-full object-cover">
+    <source src="/videos/pin3.mp4" type="video/mp4"/>
     Your browser does not support the video tag.
   </video>
 
   {/* Overlay */}
   <div className="relative z-10 max-w-3xl mx-auto">
     {/* Heading */}
-    <h1 className="text-5xl md:text-6xl font-extrabold text-white animate-fade-up">
+    <h1 className="text-5xl md:text-5xl font-extrabold text-white animate-fade-up">
       मेरा <span className="text-[#64ffda]">IPU</span>
     </h1>
 
