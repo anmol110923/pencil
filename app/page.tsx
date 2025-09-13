@@ -10,23 +10,34 @@ export default function HomePage() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative py-20 lg:py-32 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-muted/30" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(100,255,218,0.1),transparent_50%)]" />
-        <div className="container mx-auto max-w-7xl px-4 relative">
-          <div className="text-center max-w-4xl mx-auto">
-            <div className="inline-flex items-center gap-2 bg-[#64ffda]/10 text-[#64ffda] px-4 py-2 rounded-full text-sm font-medium mb-6 border border-[#64ffda]/20">
-              <TrendingUp className="h-4 w-4" />
-              Join 10,000+ learners worldwide
-            </div>
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 text-balance">
-              Smart Learning. <span className="text-[#64ffda]">Simple Access.</span>
-            </h1>
-            <p className="text-xl md:text-2xl text-muted-foreground mb-8 text-pretty leading-relaxed">
-              Unlock your potential with premium courses designed for modern learners. Learn at your own pace, access
-              exclusive content, and join a community of innovators.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+
+      <section className="relative text-center py-24 px-6 overflow-hidden">
+  {/* Background Video */}
+  <video
+    autoPlay
+    muted
+    loop
+    playsInline
+    className="absolute inset-0 w-full h-full object-cover"
+  >
+    <source src="/videos/pin3.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+
+  {/* Overlay */}
+  <div className="relative z-10 max-w-3xl mx-auto">
+    {/* Heading */}
+    <h1 className="text-5xl md:text-6xl font-extrabold text-white animate-fade-up">
+      मेरा <span className="text-[#64ffda]">IPU</span>
+    </h1>
+
+    {/* Subheading */}
+    <p className="mt-4 text-lg md:text-xl text-gray-200 animate-fade-up delay-200 leading-relaxed">
+      Everything in one place for 1st-year B.Tech students.
+    </p>
+
+    {/* Buttons */}
+    <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button
                 asChild
                 size="lg"
@@ -46,10 +57,13 @@ export default function HomePage() {
                 <Link href="/login">Get Started</Link>
               </Button>
             </div>
-          </div>
-        </div>
-      </section>
+  </div>
 
+  {/* Optional overlay for better contrast */}
+  <div className="absolute inset-0 bg-black/40"></div>
+</section>
+
+      
       {/* Features Section */}
       <section className="py-20 bg-gradient-to-br from-muted/20 to-muted/40">
         <div className="container mx-auto max-w-7xl px-4">
